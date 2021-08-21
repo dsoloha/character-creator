@@ -3,7 +3,24 @@
 </script>
 
 <main>
-	<h2>Age</h2>
+	<h3>Age</h3>
 
-	How old is {$character.name.first ?? 'your character'}?
+	<p>
+		When is {$character.name.first ?? 'your character'}'s birthday?
+	</p>
+
+	<label for="year">
+		Year
+		<input bind:value={$character.age.birth.year} />
+	</label>
+
+	<label for="month">
+		Month
+		<input bind:value={$character.age.birth.month} />
+	</label>
+
+	<label for="day">
+		Day
+		<input bind:value={$character.age.birth.day} />
+	</label>
 </main>

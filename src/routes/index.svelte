@@ -1,24 +1,20 @@
 <script lang="ts">
 	import character from '../stores/character.store';
 
-	import Sex from './sex.svelte';
-	import Name from './name.svelte';
-	import Age from './age.svelte';
-	import Physical from './physical.svelte';
 	import Mental from './mental.svelte';
+	import Name from './name.svelte';
 	import Overview from './overview.svelte';
+	import Physical from './physical.svelte';
 </script>
 
 <main>
 	<h1>Character Creator</h1>
 
 	<Name />
-	<Sex />
-	<Age />
-	<Physical />
-	<Mental />
-
 	{#if $character.name.full}
+		<Physical />
+		<Mental />
+
 		<Overview />
 	{/if}
 </main>

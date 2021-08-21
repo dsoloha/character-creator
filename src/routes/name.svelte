@@ -17,27 +17,29 @@
 
 	<label for="first">
 		First name
-		<input bind:value={$character.name.first}>
+		<input bind:value={$character.name.first} />
 	</label>
 
 	<label for="middle">
 		Middle name
-		<input bind:value={$character.name.middle}>
+		<input bind:value={$character.name.middle} />
 	</label>
 
 	<label for="last">
 		Last name
-		<input bind:value={$character.name.last}>
+		<input bind:value={$character.name.last} />
 	</label>
 
 	<label for="nickname">
 		Nickname
-		<input bind:value={nickname}>
-		<button on:click={() => {
-			nicknames = [...nicknames, nickname];	// arrays aren't fully reactive in Svelte yet
+		<input bind:value={nickname} />
+		<button
+			on:click={() => {
+				nicknames = [...nicknames, nickname]; // arrays aren't fully reactive in Svelte yet
 
-			nickname = '';
-		}}>Add</button>
+				nickname = '';
+			}}>Add</button
+		>
 	</label>
 
 	<p>

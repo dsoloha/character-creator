@@ -17,7 +17,11 @@
 		<p>
 			<b>{$character.name.full}</b> is a <b>{$character.sex.type}</b>.
 			{#if $character.eyes.color}
-			{He} has <b>{$character.eyes.color}</b> eyes.
+				{He} has <b>{$character.eyes.color}</b> eyes.
+			{/if}
+			{#if $character.age.birth}
+				{He} was born on {$character.age.birth.month}
+				{$character.age.birth.day}, {$character.age.birth.year}.
 			{/if}
 		</p>
 	{/if}

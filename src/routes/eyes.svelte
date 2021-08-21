@@ -11,8 +11,6 @@
 
 	<label for="first">
 		Eye color
-		<input bind:value={$character.eyes.color}>
+		<input bind:value={$character.eyes.color} />
 	</label>
 </main>
-
-

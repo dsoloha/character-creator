@@ -3,7 +3,7 @@
 </script>
 
 <main>
-	<h2>Sex</h2>
+	<h3>Sex</h3>
 
 	<p>
 		{$character.name.first ?? `Your character`} is a {$character.sex.type}.
