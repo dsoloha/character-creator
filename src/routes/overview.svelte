@@ -17,7 +17,7 @@
 		<p>
 			<b>{$character.name.full}</b> is a <b>{$character.sex.type}</b>.
 			{#if $character.eyes.color}
-			{He} has <b>{$character.eyes.color}</b> eyes.
+				{He} has <b>{$character.eyes.color}</b> eyes.
 			{/if}
 		</p>
 	{/if}
