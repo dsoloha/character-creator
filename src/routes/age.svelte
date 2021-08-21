@@ -3,7 +3,9 @@
 </script>
 
 <main>
-	<h2>Age</h2>
+	<h3>Age</h3>
 
-	How old is {$character.name.first ?? 'your character'}?
+	<p>
+		How old is {$character.name.first ?? 'your character'}?
+	</p>
 </main>
