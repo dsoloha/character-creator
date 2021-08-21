@@ -2,5 +2,5 @@
 </script>
 
 <main>
-  <h2>Mental</h2>
+	<h2>Mental</h2>
 </main>
