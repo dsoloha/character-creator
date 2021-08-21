@@ -11,6 +11,10 @@ export default class Age {
 	birth: IBirthday;
 
 	constructor() {
-		this.birth = null;
+		this.birth = {
+			day: 1,
+			month: 1,
+			year: 1,
+		};
 	}
 }
