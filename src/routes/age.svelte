@@ -1,11 +1,9 @@
 <script lang="ts">
-	import type Character from '../classes/Character';
-
-	export let character: Character;
+	import character from '../stores/character.store';
 </script>
 
 <main>
 	<h2>Age</h2>
 
-	How old is {character.name.first ?? 'your character'}?
+	How old is {$character.name.first ?? 'your character'}?
 </main>

@@ -1,7 +1,4 @@
 <script lang="ts">
-	import type Character from '../classes/Character';
-
-	export let character: Character;
 </script>
 
 <main>

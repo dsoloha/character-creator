@@ -1,7 +1,5 @@
 <script lang="ts">
-	import type Character from '../classes/Character';
-
-	export let character: Character;
+	import character from '../stores/character.store';
 
 	$: nicknames = [];
 
@@ -11,25 +9,25 @@
 <main>
 	<h2>Name</h2>
 
-	{#if character.name.first}
+	{#if $character.name.first}
 		<p>
-			Your character's name is {character.name.full}.
+			Your character's name is {$character.name.full}.
 		</p>
 	{/if}
 
 	<label for="first">
 		First name
-		<input bind:value={character.name.first}>
+		<input bind:value={$character.name.first}>
 	</label>
 
 	<label for="middle">
 		Middle name
-		<input bind:value={character.name.middle}>
+		<input bind:value={$character.name.middle}>
 	</label>
 
 	<label for="last">
 		Last name
-		<input bind:value={character.name.last}>
+		<input bind:value={$character.name.last}>
 	</label>
 
 	<label for="nickname">
