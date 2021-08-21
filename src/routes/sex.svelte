@@ -1,24 +1,20 @@
 <script lang="ts">
-	import type Character from '../classes/Character';
-
-	export let character: Character;
-
-	$: ({sex, name} = character);
+	import character from '../stores/character.store';
 </script>
 
 <main>
 	<h2>Sex</h2>
 
 	<p>
-		{name.first ?? `Your character`} is a {sex.type}.
+		{$character.name.first ?? `Your character`} is a {$character.sex.type}.
 	</p>
 
 	<label for="male">
 		Male
-		<input type="radio" bind:group={sex.type} name="sex" value={'male'} checked />
+		<input type="radio" bind:group={$character.sex.type} name="sex" value={'male'} checked />
 	</label>
 	<label for="female">
 		Female
-		<input type="radio" bind:group={sex.type} name="sex" value={'female'} />
+		<input type="radio" bind:group={$character.sex.type} name="sex" value={'female'} />
 	</label>
 </main>
