@@ -5,9 +5,11 @@
 <main>
 	<h3>Eyes</h3>
 
-	<p>
-		{$character.name.first ?? 'Your character'} has {$character.eyes.color ?? 'blue'} eyes.
-	</p>
+	{#if $character.eyes.color}
+		<p>
+			{$character.name.first ?? 'Your character'} has {$character.eyes.color ?? 'blue'} eyes.
+		</p>
+	{/if}
 
 	<label for="first">
 		Eye color
