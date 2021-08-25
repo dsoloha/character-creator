@@ -11,7 +11,7 @@
 		</p>
 	{/if}
 
-	<label for="first">
+	<label for="color">
 		Eye color
 		<input bind:value={$character.eyes.color} />
 	</label>
