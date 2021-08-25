@@ -1,8 +1,12 @@
 <script lang="ts">
 	import character from '../stores/character.store';
-	import { getPronouns } from '../utils/pronouns';
+	// import { getPronouns } from '../utils/pronouns';
 
-	$: ({ He } = getPronouns($character));
+	// $: ({ He } = getPronouns($character));
+
+	let He: string;
+
+	$: (He = $character.sex.type === 'male' ? 'He' : 'She');
 </script>
 
 <main>

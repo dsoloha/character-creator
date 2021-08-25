@@ -212,6 +212,6 @@ export default class Pronouns implements IPronouns {
 	}
 }
 
-export function getPronouns(actor: Character): Pronouns {
-	return new Pronouns(actor);
-}
+// export function getPronouns(actor: Character): Pronouns {
+// 	return new Pronouns(actor);
+// }
