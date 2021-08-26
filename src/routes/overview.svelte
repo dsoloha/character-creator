@@ -6,7 +6,7 @@
 
 	let He: string;
 
-	$: (He = $character.sex.type === 'male' ? 'He' : 'She');
+	$: He = $character.sex.type === 'male' ? 'He' : 'She';
 </script>
 
 <main>

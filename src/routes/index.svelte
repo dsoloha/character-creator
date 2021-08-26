@@ -1,6 +1,7 @@
 <script lang="ts">
 	import character from '../stores/character.store';
 
+	import Background from './background.svelte';
 	import Mental from './mental.svelte';
 	import Name from './name.svelte';
 	import Overview from './overview.svelte';
@@ -10,13 +11,16 @@
 <main>
 	<h1>Character Creator</h1>
 
-	<Name />
-	{#if $character.name.full}
-		<Physical />
-		<Mental />
+	<form>
+		<Name />
+		{#if $character.name.full}
+			<Physical />
+			<Mental />
+			<Background />
 
-		<Overview />
-	{/if}
+			<Overview />
+		{/if}
+	</form>
 </main>
 
 <style>

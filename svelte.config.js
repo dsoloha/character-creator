@@ -1,5 +1,5 @@
 import preprocess from 'svelte-preprocess';
-import { resolve } from "path";
+import { resolve } from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -17,9 +17,9 @@ const config = {
 					$extensions: resolve('./src/extensions'),
 					$stores: resolve('./src/stores'),
 					$actions: resolve('./src/actions'),
-				}
-			}
-		}
+				},
+			},
+		},
 	},
 };
 

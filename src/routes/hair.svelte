@@ -7,7 +7,8 @@
 
 	{#if $character.hair.color}
 		<p>
-			{$character.name.first ?? 'Your character'} has {$character.hair.length || 'short'}, {$character.hair.color ?? 'brown'} hair.
+			{$character.name.first ?? 'Your character'} has {$character.hair.length || 'short'}, {$character.hair.color ??
+				'brown'} hair.
 		</p>
 	{/if}
 
