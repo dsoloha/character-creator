@@ -16,4 +16,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build the project
-        run: svelte-kit build
+        run: npm run build
