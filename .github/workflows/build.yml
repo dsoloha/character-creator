@@ -6,19 +6,8 @@ on:
   pull_request:
     branches: [master]
 
-  workflow_dispatch:
-
 jobs:
-  format:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - run: npm run format
-
   build:
-    needs: format
     runs-on: ubuntu-latest
 
     steps:
