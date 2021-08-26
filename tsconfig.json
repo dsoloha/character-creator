@@ -28,8 +28,8 @@
 			"$extensions/*": ["src/extensions/*"],
 			"$components/*": ["src/components/*"],
 			"$stores/*": ["src/stores/*"],
-			"$actions/*": ["src/actions/*"],
-		},
+			"$actions/*": ["src/actions/*"]
+		}
 	},
 	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]
 }

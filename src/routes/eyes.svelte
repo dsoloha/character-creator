@@ -7,7 +7,7 @@
 
 	{#if $character.eyes.color}
 		<p>
-			{$character.name.first ?? 'Your character'} has {$character.eyes.color ?? 'blue'} eyes.
+			{$character.name.first ?? 'Your character'} has {$character.eyes.color} eyes.
 		</p>
 	{/if}
 
