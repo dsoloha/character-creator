@@ -1,5 +1,5 @@
 import type Character from '../classes/Character';
-import { capitalize } from './string';
+import { capitalize } from '../../lib/string';
 
 interface IPronouns {
 	/** The actor to whom the pronouns are assigned. */
@@ -211,7 +211,3 @@ export default class Pronouns implements IPronouns {
 		return this.noun === Noun.female ? 'wives' : 'husbands';
 	}
 }
-
-// export function getPronouns(actor: Character): Pronouns {
-// 	return new Pronouns(actor);
-// }

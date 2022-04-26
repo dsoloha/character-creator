@@ -1,10 +1,26 @@
-export type SexType = 'male' | 'female';
+import { random } from '../../lib/number'
 
-export default class Sex {
-	/** Whether the character is male or female. */
-	type: SexType;
+export type SexType = 'male' | 'female'
 
-	constructor() {
-		this.type = 'male';
-	}
+export default class Sex implements ISex {
+  type: SexType
+
+  constructor(options?: ISex) {
+    this.type = options?.type ?? 'male'
+  }
+
+  generateType(): SexType {
+    return random(1, 100) > 50 ? 'male' : 'female'
+  }
+
+  generate(): ISex {
+    return {
+      type: this.generateType(),
+    }
+  }
+}
+
+export interface ISex {
+  /** The biological sex of the character. */
+  type: SexType
 }
