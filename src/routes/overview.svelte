@@ -1,8 +1,5 @@
 <script lang="ts">
 	import character from '../stores/character.store';
-	// import { getPronouns } from '../utils/pronouns';
-
-	// $: ({ He } = getPronouns($character));
 
 	let He: string;
 

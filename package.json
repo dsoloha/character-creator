@@ -1,6 +1,6 @@
 {
 	"name": "character-creator",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -9,6 +9,9 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write --plugin-search-dir=. ."
+	},
+	"dependencies": {
+		"@dsoloha/character-maker": "^0.2.18"
 	},
 	"devDependencies": {
 		"@sveltejs/kit": "next",
@@ -25,5 +28,6 @@
 		"tslib": "^2.0.0",
 		"typescript": "^4.0.0"
 	},
-	"type": "module"
+	"type": "module",
+	"esModuleInterop": true
 }

@@ -1,6 +1,6 @@
 import { writable, Writable } from 'svelte/store';
-import Character from '../classes/Character';
+import { Character } from '@dsoloha/character-maker';
 
-const character: Writable<Character> = writable(new Character());
+const character: Writable<Character> = writable(new Character().generate());
 
 export default character;
