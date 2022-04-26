@@ -23,8 +23,8 @@
 		"allowJs": true,
 		"checkJs": true,
 		"paths": {
-			"$lib": ["src/lib"],
-			"$lib/*": ["src/lib/*"],
+			"$lib": ["/lib"],
+			"$lib/*": ["/lib/*"],
 			"$extensions/*": ["src/extensions/*"],
 			"$components/*": ["src/components/*"],
 			"$stores/*": ["src/stores/*"],

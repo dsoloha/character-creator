@@ -1,12 +1,9 @@
 <script lang="ts">
 	import character from '../stores/character.store';
-	// import { getPronouns } from '../utils/pronouns';
-
-	// $: ({ He } = getPronouns($character));
 
 	let He: string;
 
-	$: He = $character.sex.type === 'male' ? 'He' : 'She';
+	$: He = $character.pronouns.He
 </script>
 
 <main>
@@ -14,9 +11,11 @@
 
 	{#if $character.name.first}
 		<p>
-			<b>{$character.name.full}</b> is a <b>{$character.sex.type}</b>.
-			{#if $character.eyes.color}
-				{He} has <b>{$character.eyes.color}</b> eyes.
+			<b>{$character.name.first}</b> is a <b>{$character.sex.type}</b>.
+			{#if $character.eyes.colors.left === $character.eyes.colors.right}
+				{He} has <b>{$character.eyes.colors.left}</b> eyes.
+			{:else}
+				{He} has a <b>{$character.eyes.colors.left}</b> left eye and a <b>{$character.eyes.colors.right}</b> right eye.
 			{/if}
 			{#if $character.age.birth}
 				{He} was born on
