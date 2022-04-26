@@ -1,6 +1,5 @@
 <script lang="ts">
 	import character from '../stores/character.store';
-	// $: ({ He } = getPronouns($character));
 
 	let He: string;
 
