@@ -1,4 +1,4 @@
-import { gaussian, random } from '../lib/number'
+import { gaussian, random } from '../../lib/number'
 
 export default class Age implements IAge {
   birth: {
