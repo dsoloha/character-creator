@@ -61,9 +61,9 @@ export default class Name implements IName {
   generate(): Name {
     return new Name({
       first: this.generateFirst(),
-        middle: this.generateMiddle(),
-        last: this.generateLast(),
-        nicknames: this.generateNicknames(),
+      middle: this.generateMiddle(),
+      last: this.generateLast(),
+      nicknames: this.generateNicknames(),
     })
   }
 }

@@ -31,12 +31,7 @@ export default class Build implements IBuild {
   }
 
   /** Generates a description for the character's build based on height, weight, and musculature. */
-  private generateType(options: {
-    sex: SexType
-    height: number
-    weight: number
-    muscles: number
-  }): string {
+  private generateType(options: { sex: SexType; height: number; weight: number; muscles: number }): string {
     const meanHeight = {
       male: 168,
       female: 158,
