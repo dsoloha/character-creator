@@ -26,7 +26,7 @@ export default class Age implements IAge {
     this.birth = {
       day: options?.birth?.day ?? 1,
       month: options?.birth?.month ?? 'January',
-      year: options?.birth?.year ?? 1,
+      year: options?.birth?.year ?? new Date().getFullYear(),
     }
   }
 

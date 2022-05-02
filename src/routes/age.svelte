@@ -5,17 +5,21 @@
 
   let selected: Month
 
+	const clamp = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max)
+  const year = $character.age.birth.year ?? new Date().getFullYear()
+  const leapYear = year % 4 === 0
+  const february = leapYear ? 29 : 28
   const months: Array<{ count: number; name: Month }> = [
     {
-      count: 30,
+      count: 31,
       name: 'January',
     },
     {
-      count: 30,
+      count: february,
       name: 'February',
     },
     {
-      count: 30,
+      count: 31,
       name: 'March',
     },
     {
@@ -23,7 +27,7 @@
       name: 'April',
     },
     {
-      count: 30,
+      count: 31,
       name: 'May',
     },
     {
@@ -31,11 +35,11 @@
       name: 'June',
     },
     {
-      count: 30,
+      count: 31,
       name: 'July',
     },
     {
-      count: 30,
+      count: 31,
       name: 'August',
     },
     {
@@ -43,7 +47,7 @@
       name: 'September',
     },
     {
-      count: 30,
+      count: 31,
       name: 'October',
     },
     {
@@ -51,10 +55,13 @@
       name: 'November',
     },
     {
-      count: 30,
+      count: 31,
       name: 'December',
     },
   ]
+
+  $: userMonth = months.find((m) => m.name === $character.age.birth.month)
+	$: day = clamp($character.age.birth.day, 1, userMonth.count)
 </script>
 
 <main>
@@ -73,7 +80,13 @@
   <label for="month">
     Month
     <!-- svelte-ignore a11y-no-onchange -->
-    <select bind:value={selected} on:change={() => ($character.age.birth.month = selected)}>
+    <select
+      bind:value={selected}
+      on:change={() => (
+        ($character.age.birth.month = selected),
+        ($character.age.birth.day = day)
+      )}
+    >
       {#each months as month}
         <option value={month.name}>
           {month.name}
@@ -84,6 +97,9 @@
 
   <label for="day">
     Day
-    <input bind:value={$character.age.birth.day} />
+    <label>
+      <input type="number" bind:value={$character.age.birth.day} min="1" max={userMonth.count} />
+      <input type="range" bind:value={$character.age.birth.day} min="1" max={userMonth.count} />
+    </label>
   </label>
 </main>
