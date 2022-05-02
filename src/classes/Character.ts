@@ -72,8 +72,8 @@ export default class Character implements ICharacter {
     this.sexuality = new Sexuality(this.sex.type, options?.sexuality)
   }
 
-  generate(): ICharacter {
-    return {
+  generate(): Character {
+    return new Character({
       age: this.age.generate(),
       background: this.background.generate(),
       build: this.build.generate(),
@@ -94,7 +94,7 @@ export default class Character implements ICharacter {
       speech: this.speech.generate(),
       stomach: this.stomach.generate(),
       waist: this.waist.generate(),
-    }
+    })
   }
 }
 

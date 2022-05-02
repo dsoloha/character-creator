@@ -15,7 +15,5 @@ Array.prototype.random = function random<T>(this: Array<T>): T {
 }
 
 Array.prototype.toSentence = function toSentence(this: Array<string>): string {
-  return this.reduce(
-    (res, ch, i, arr) => res + (i === arr.length - 1 ? ' and ' : ', ') + ch
-  )
+  return this.reduce((res, ch, i, arr) => res + (i === arr.length - 1 ? ' and ' : ', ') + ch)
 }

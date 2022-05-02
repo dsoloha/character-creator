@@ -15,7 +15,7 @@ export default class Hair implements IHairs {
         color: '',
         length: '',
         style: '',
-      }
+      },
     )
 
     this.head = options?.head ?? defaultHair
@@ -45,11 +45,7 @@ export default class Hair implements IHairs {
     return styles.random()
   }
 
-  generateHead(options?: {
-    color?: string
-    length?: string
-    style?: string
-  }): IHair {
+  generateHead(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()
@@ -61,11 +57,7 @@ export default class Hair implements IHairs {
     }
   }
 
-  generateFace(options?: {
-    color?: string
-    length?: string
-    style?: string
-  }): IHair {
+  generateFace(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()
@@ -77,11 +69,7 @@ export default class Hair implements IHairs {
     }
   }
 
-  generateUnderarms(options?: {
-    color?: string
-    length?: string
-    style?: string
-  }): IHair {
+  generateUnderarms(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()
@@ -93,11 +81,7 @@ export default class Hair implements IHairs {
     }
   }
 
-  generateChest(options?: {
-    color?: string
-    length?: string
-    style?: string
-  }): IHair {
+  generateChest(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()
@@ -109,11 +93,7 @@ export default class Hair implements IHairs {
     }
   }
 
-  generatePubic(options?: {
-    color?: string
-    length?: string
-    style?: string
-  }): IHair {
+  generatePubic(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()
@@ -125,11 +105,7 @@ export default class Hair implements IHairs {
     }
   }
 
-  generateArm(options?: {
-    color?: string
-    length?: string
-    style?: string
-  }): IHair {
+  generateArm(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()
@@ -141,11 +117,7 @@ export default class Hair implements IHairs {
     }
   }
 
-  generateLeg(options?: {
-    color?: string
-    length?: string
-    style?: string
-  }): IHair {
+  generateLeg(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()
@@ -157,11 +129,7 @@ export default class Hair implements IHairs {
     }
   }
 
-  generate(options?: {
-    color?: string
-    length?: string
-    style?: string
-  }): IHairs {
+  generate(options?: { color?: string; length?: string; style?: string }): IHairs {
     return {
       head: this.generateHead(options),
       face: this.generateFace(options),

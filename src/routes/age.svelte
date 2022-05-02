@@ -1,26 +1,105 @@
 <script lang="ts">
-	import character from '../stores/character.store';
+  import character from '../stores/character.store'
+  import type { Month } from '../classes/Age'
+  import { asOrdinal } from '../../lib/string'
+
+  let selected: Month
+
+	const clamp = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max)
+  const year = $character.age.birth.year ?? new Date().getFullYear()
+  const leapYear = year % 4 === 0
+  const february = leapYear ? 29 : 28
+  const months: Array<{ count: number; name: Month }> = [
+    {
+      count: 31,
+      name: 'January',
+    },
+    {
+      count: february,
+      name: 'February',
+    },
+    {
+      count: 31,
+      name: 'March',
+    },
+    {
+      count: 30,
+      name: 'April',
+    },
+    {
+      count: 31,
+      name: 'May',
+    },
+    {
+      count: 30,
+      name: 'June',
+    },
+    {
+      count: 31,
+      name: 'July',
+    },
+    {
+      count: 31,
+      name: 'August',
+    },
+    {
+      count: 30,
+      name: 'September',
+    },
+    {
+      count: 31,
+      name: 'October',
+    },
+    {
+      count: 30,
+      name: 'November',
+    },
+    {
+      count: 31,
+      name: 'December',
+    },
+  ]
+
+  $: userMonth = months.find((m) => m.name === $character.age.birth.month)
+	$: day = clamp($character.age.birth.day, 1, userMonth.count)
 </script>
 
 <main>
-	<h3>Age</h3>
+  <h3>Age</h3>
 
-	<p>
-		When is {$character.name.first ?? 'your character'}'s birthday?
-	</p>
+  <p>
+    {$character.name.first ?? 'your character'} was born on the {asOrdinal($character.age.birth.day)} of {$character.age
+      .birth.month} in {$character.age.birth.year}.
+  </p>
 
-	<label for="year">
-		Year
-		<input bind:value={$character.age.birth.year} />
-	</label>
+  <label for="year">
+    Year
+    <input bind:value={$character.age.birth.year} />
+  </label>
 
-	<label for="month">
-		Month
-		<input bind:value={$character.age.birth.month} />
-	</label>
+  <label for="month">
+    Month
+    <!-- svelte-ignore a11y-no-onchange -->
+    <select
+      bind:value={selected}
+      on:change={() => (
+        ($character.age.birth.month = selected),
+        ($character.age.birth.day = day)
+      )}
+    >
+      {#each months as month}
+        <option value={month.name}>
+          {month.name}
+        </option>
+      {/each}
+    </select>
+  </label>
 
-	<label for="day">
-		Day
-		<input bind:value={$character.age.birth.day} />
-	</label>
+  <label for="day">
+    Day
+    <label>
+      <input type="number" bind:value={$character.age.birth.day} min="1" max={userMonth.count} />
+      <input type="range" bind:value={$character.age.birth.day} min="1" max={userMonth.count} />
+    </label>
+  </label>
 </main>

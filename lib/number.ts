@@ -29,9 +29,7 @@ export function gaussianPair(mean = 0, deviation = 0): number[] {
   const num = Math.sqrt(-2.0 * Math.log(1 - Math.random()))
   const sigma = 2.0 * Math.PI * (1 - Math.random())
 
-  return [num * Math.cos(sigma), num * Math.sin(sigma)].map(
-    (val) => val * deviation * mean
-  )
+  return [num * Math.cos(sigma), num * Math.sin(sigma)].map((val) => val * deviation * mean)
 }
 
 /** Returns a random number between `min` and `max`, inclusive. */

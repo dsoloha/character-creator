@@ -40,8 +40,7 @@ export default class Skin implements ISkin {
   generateBirthmarks(): IMark[] | null {
     const birthmarks = []
 
-    while (gaussian(1, 100) > 80)
-      birthmarks.push(this.generateMark({ description: 'a birthmark' }))
+    while (gaussian(1, 100) > 80) birthmarks.push(this.generateMark({ description: 'a birthmark' }))
 
     if (birthmarks) return birthmarks
 
@@ -51,8 +50,7 @@ export default class Skin implements ISkin {
   generateBrands(): IMark[] | null {
     const brands = []
 
-    while (gaussian(1, 100) > 80)
-      brands.push(this.generateMark({ description: 'a brand' }))
+    while (gaussian(1, 100) > 80) brands.push(this.generateMark({ description: 'a brand' }))
 
     if (brands) return brands
 
@@ -62,8 +60,7 @@ export default class Skin implements ISkin {
   generateMarkings(): IMark[] | null {
     const markings = []
 
-    while (gaussian(1, 100) > 80)
-      markings.push(this.generateMark({ description: 'a marking' }))
+    while (gaussian(1, 100) > 80) markings.push(this.generateMark({ description: 'a marking' }))
 
     if (markings) return markings
 
@@ -73,8 +70,7 @@ export default class Skin implements ISkin {
   generateScars(): IMark[] | null {
     const scars = []
 
-    while (gaussian(1, 100) > 80)
-      scars.push(this.generateMark({ description: 'a scar' }))
+    while (gaussian(1, 100) > 80) scars.push(this.generateMark({ description: 'a scar' }))
 
     if (scars) return scars
 
