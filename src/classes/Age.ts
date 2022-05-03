@@ -72,6 +72,14 @@ export default class Age implements IAge {
     return { day, month, year }
   }
 
+  /**
+   * Converts a given date object (day, month, year) to an object of the `Date` type.
+   * @param date The date to convert.
+   */
+  toDate(date: IBirth): Date {
+    return new Date(`${date.month} ${date.day}, ${date.year}`)
+  }
+
   generate(): IAge {
     return {
       birth: this.generateBirth(),
