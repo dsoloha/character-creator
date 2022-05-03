@@ -61,7 +61,6 @@
   ]
 
   $: userMonth = months.find((m) => m.name === $character.age.birth.month)
-	$: day = clamp($character.age.birth.day, 1, userMonth.count)
 </script>
 
 <main>
@@ -84,7 +83,7 @@
       bind:value={selected}
       on:change={() => (
         ($character.age.birth.month = selected),
-        ($character.age.birth.day = day)
+        ($character.age.birth.day = 1)
       )}
     >
       {#each months as month}
