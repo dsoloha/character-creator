@@ -5,7 +5,6 @@
 
   let selected: Month
 
-	const clamp = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max)
   const year = $character.age.birth.year ?? new Date().getFullYear()
   const leapYear = year % 4 === 0
   const february = leapYear ? 29 : 28

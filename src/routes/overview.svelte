@@ -1,7 +1,8 @@
 <script lang="ts">
   import character from '../stores/character.store'
+	import { getPronouns } from '../classes/Pronouns'
 
-  $: He = $character.pronouns.He
+  $: He = getPronouns($character).He
 </script>
 
 <main>

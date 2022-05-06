@@ -1,4 +1,5 @@
 import { capitalize } from '../../lib/string'
+import type Character from './Character';
 import type { SexType } from './Sex'
 
 export default class Pronouns {
@@ -130,4 +131,8 @@ export default class Pronouns {
   get Herself(): string {
     return capitalize(this.herself)
   }
+}
+
+export function getPronouns(actor: Character): Pronouns {
+	return new Pronouns(actor.sex.type)
 }
