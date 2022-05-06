@@ -13,8 +13,9 @@ export function capitalize(val: string): string {
  * @returns The number as an ordinal.
  */
 export function asOrdinal(val: number): string {
-  if ([1].includes(val)) return val + 'st'
-  if ([2].includes(val)) return val + 'nd'
-  if ([3].includes(val)) return val + 'rd'
+  const asString = val.toString()
+  if (['1'].includes(asString.charAt(asString.length - 1))) return val + 'st'
+  if (['2'].includes(asString.charAt(asString.length - 1))) return val + 'nd'
+  if (['3'].includes(asString.charAt(asString.length - 1))) return val + 'rd'
   return val + 'th'
 }

@@ -36,4 +36,9 @@
       color: white;
     }
   }
+
+  main {
+    width: 75%;
+    margin: auto;
+  }
 </style>

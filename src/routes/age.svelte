@@ -5,7 +5,6 @@
 
   let selected: Month
 
-	const clamp = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max)
   const year = $character.age.birth.year ?? new Date().getFullYear()
   const leapYear = year % 4 === 0
   const february = leapYear ? 29 : 28
@@ -61,7 +60,6 @@
   ]
 
   $: userMonth = months.find((m) => m.name === $character.age.birth.month)
-	$: day = clamp($character.age.birth.day, 1, userMonth.count)
 </script>
 
 <main>
@@ -84,7 +82,7 @@
       bind:value={selected}
       on:change={() => (
         ($character.age.birth.month = selected),
-        ($character.age.birth.day = day)
+        ($character.age.birth.day = 1)
       )}
     >
       {#each months as month}
