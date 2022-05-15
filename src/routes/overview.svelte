@@ -1,8 +1,7 @@
 <script lang="ts">
   import character from '../stores/character.store'
-  import { getPronouns } from '../classes/Pronouns'
-  import Eyes from './overview/eyes.svelte'
   import Age from './overview/age.svelte'
+  import Eyes from './overview/eyes.svelte'
   import Sex from './overview/sex.svelte'
 </script>
 
