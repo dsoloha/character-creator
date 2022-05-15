@@ -1,5 +1,5 @@
 import { gaussian } from '../../lib/number'
-import { SexType } from './Sex'
+import type { SexType } from './Sex'
 
 export default class Build implements IBuild {
   height: number

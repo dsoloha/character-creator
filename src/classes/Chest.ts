@@ -1,6 +1,6 @@
 import '../../lib/array'
 import { random } from '../../lib/number'
-import { SexType } from './Sex'
+import type { SexType } from './Sex'
 
 export default class Chest implements IChest {
   size: string

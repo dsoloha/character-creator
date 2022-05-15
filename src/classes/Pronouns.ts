@@ -1,5 +1,5 @@
 import { capitalize } from '../../lib/string'
-import type Character from './Character';
+import type Character from './Character'
 import type { SexType } from './Sex'
 
 export default class Pronouns {
@@ -134,5 +134,5 @@ export default class Pronouns {
 }
 
 export function getPronouns(actor: Character): Pronouns {
-	return new Pronouns(actor.sex.type)
+  return new Pronouns(actor.sex.type)
 }
