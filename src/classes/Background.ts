@@ -24,6 +24,10 @@ export default class Background implements IBackground {
     }
   }
 
+  /**
+   * Generates a random birthplace as a `city, country`.
+   * @returns A random birthplace.
+   */
   generateBirthplace(): string {
     // TODO: hook this up to a list of potential birthplaces
     const places: string[] = []

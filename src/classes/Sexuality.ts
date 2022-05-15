@@ -1,5 +1,5 @@
 import { gaussian, random } from '../../lib/number'
-import { SexType } from './Sex'
+import type { SexType } from './Sex'
 
 export default class Sexuality implements ISexuality {
   gender: string
@@ -39,18 +39,18 @@ export default class Sexuality implements ISexuality {
           female: random(65, 100),
         }
       }
-    } else {
-      if (options.sex === 'male') {
-        return {
-          male: random(0, 35),
-          female: random(65, 100),
-        }
+    }
+
+    if (options.sex === 'male') {
+      return {
+        male: random(0, 35),
+        female: random(65, 100),
       }
-      if (options.sex === 'female') {
-        return {
-          male: random(65, 100),
-          female: random(0, 35),
-        }
+    }
+    if (options.sex === 'female') {
+      return {
+        male: random(65, 100),
+        female: random(0, 35),
       }
     }
 

@@ -80,10 +80,7 @@
     <!-- svelte-ignore a11y-no-onchange -->
     <select
       bind:value={selected}
-      on:change={() => (
-        ($character.age.birth.month = selected),
-        ($character.age.birth.day = 1)
-      )}
+      on:change={() => (($character.age.birth.month = selected), ($character.age.birth.day = 1))}
     >
       {#each months as month}
         <option value={month.name}>
@@ -93,11 +90,21 @@
     </select>
   </label>
 
-  <label for="day">
-    Day
-    <label>
-      <input type="number" bind:value={$character.age.birth.day} min="1" max={userMonth.count} />
-      <input type="range" bind:value={$character.age.birth.day} min="1" max={userMonth.count} />
+  <div id="bg-white">
+    <label for="day">
+      Day
+      <label>
+        <input type="number" bind:value={$character.age.birth.day} min="1" max={userMonth.count} />
+        <input type="range" bind:value={$character.age.birth.day} min="1" max={userMonth.count} />
+      </label>
     </label>
-  </label>
+  </div>
 </main>
+
+<style>
+  #bg-white {
+    background-color: white;
+    color: black;
+    display: inline-block;
+  }
+</style>

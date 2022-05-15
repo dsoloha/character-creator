@@ -10,12 +10,12 @@
     <p>
       {$character.name.first || 'Your character'} has
       {#if $character.hair.head.length}
-        {$character.hair.head.length || 'short'},
+        <b>{$character.hair.head.length}</b>,
       {/if}
       {#if $character.hair.head.style}
-        {$character.hair.head.style || 'straight'},
+        <b>{$character.hair.head.style}</b>,
       {/if}
-      {$character.hair.head.color || 'brown'} hair.
+      <b>{$character.hair.head.color}</b> hair.
     </p>
   {/if}
 
