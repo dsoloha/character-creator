@@ -11,7 +11,7 @@
 
   {#if $character.name.first}
     <p>
-      Your character's name is {$character.name.full}.
+      Your character's name is <b>{$character.name.full}</b>.
     </p>
   {/if}
 

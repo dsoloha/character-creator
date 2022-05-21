@@ -7,7 +7,7 @@
 
   {#if $character.sex.type}
     <p>
-      {$character.name.first ?? `Your character`} is a {$character.sex.type}.
+      {$character.name.first ?? `Your character`} is a <b>{$character.sex.type}</b>.
     </p>
   {/if}
 

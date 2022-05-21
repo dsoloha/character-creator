@@ -66,13 +66,16 @@
   <h3>Age</h3>
 
   <p>
-    {$character.name.first ?? 'your character'} was born on the {asOrdinal($character.age.birth.day)} of {$character.age
-      .birth.month} in {$character.age.birth.year}.
+    {$character.name.first ?? 'your character'} was born on the <b>{asOrdinal($character.age.birth.day)}</b> of
+    <b>
+      {$character.age.birth.month}
+    </b>
+    in <b>{$character.age.birth.year}</b>.
   </p>
 
   <label for="year">
     Year
-    <input bind:value={$character.age.birth.year} />
+    <input type="number" bind:value={$character.age.birth.year} />
   </label>
 
   <label for="month">

@@ -10,15 +10,15 @@
   {#if $character.eyes.colors.left || $character.eyes.colors.right}
     {#if $character.eyes.colors.left === $character.eyes.colors.right}
       <p>
-        {$character.name.first ?? 'Your character'} has {$character.eyes.colors.left} eyes.
+        {$character.name.first ?? 'Your character'} has <b>{$character.eyes.colors.left}</b> eyes.
       </p>
     {:else}
       <p>
         {#if $character.eyes.colors.left}
-          {$character.name.first ?? 'Your character'} has a {$character.eyes.colors.left} left eye.
+          {$character.name.first ?? 'Your character'} has a <b>{$character.eyes.colors.left}</b> left eye.
         {/if}
         {#if $character.eyes.colors.right}
-          {He} has a {$character.eyes.colors.right} right eye.
+          {He} has a <b>{$character.eyes.colors.right}</b> right eye.
         {/if}
       </p>
     {/if}
