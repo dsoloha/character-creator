@@ -7,7 +7,8 @@ export default class Nose implements INose {
     this.anosmia = options?.anosmia ?? false
   }
 
-  generateAnosmia(): boolean {
+  /** Generates whether the nose has a sense of smell. */
+  private generateAnosmia(): boolean {
     return gaussian(1, 100) > 99 ? false : true
   }
 

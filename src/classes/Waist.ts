@@ -7,7 +7,8 @@ export default class Waist implements IWaist {
     this.size = options?.size ?? ''
   }
 
-  generateSize(): string {
+  /** Generates a new waist size. */
+  private generateSize(): string {
     const sizes = ['small', 'average', 'large']
     const size = sizes.random()
 

@@ -16,7 +16,8 @@ export default class Sexuality implements ISexuality {
     }
   }
 
-  generateGender(options: { sex: SexType } = { sex: 'male' }): string {
+  /** Generates whether the actor perceives themselves as male or female. */
+  private generateGender(options: { sex: SexType } = { sex: 'male' }): string {
     if (gaussian(1, 100, 1.5) > 99) {
       if (options.sex === 'male') return 'female'
       if (options.sex === 'female') return 'male'
@@ -25,7 +26,8 @@ export default class Sexuality implements ISexuality {
     return options.sex
   }
 
-  generateAttraction(options: { sex: SexType } = { sex: 'male' }): IAttraction {
+  /** Generates how attracted to other sexes the actor is. */
+  private generateAttraction(options: { sex: SexType } = { sex: 'male' }): IAttraction {
     if (gaussian(1, 100) > 95) {
       if (options.sex === 'male') {
         return {

@@ -22,15 +22,17 @@ export default class Name implements IName {
     return name.join(' ')
   }
 
-  private generateFirst(): string {
+  /** Generates a new first name as `name, nickname`. */
+  private generateFirst(): IFirstName {
     // TODO: hook this up to a database of first names
-    const names: string[] = []
+    const names: IFirstName[] = []
 
-    names.push('John')
+    names.push({ name: 'John', nicknames: ['Johnny'] })
 
     return names.random()
   }
 
+  /** Generates a new middle name. */
   private generateMiddle(): string {
     // TODO: hook this up to a database of middle names
     const names: string[] = []
@@ -40,6 +42,7 @@ export default class Name implements IName {
     return names.random()
   }
 
+  /** Generates a new last name. */
   private generateLast(): string {
     // TODO: hook this up to a database of last names
     const names: string[] = []
@@ -49,23 +52,21 @@ export default class Name implements IName {
     return names.random()
   }
 
-  private generateNicknames(): string[] {
-    // TODO: hook this up to a database of nicknames based on first name
-    const names: string[] = []
-
-    names.push('Johnny')
-
-    return names
-  }
-
   generate(): Name {
     return new Name({
-      first: this.generateFirst(),
+      first: this.generateFirst().name,
       middle: this.generateMiddle(),
       last: this.generateLast(),
-      nicknames: this.generateNicknames(),
+      nicknames: this.generateFirst().nicknames,
     })
   }
+}
+
+export interface IFirstName {
+  /** The legal first name. */
+  name: string
+  /** A list of any nicknames. */
+  nicknames: string[]
 }
 
 export interface IName {

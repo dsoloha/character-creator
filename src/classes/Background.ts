@@ -24,18 +24,16 @@ export default class Background implements IBackground {
     }
   }
 
-  /**
-   * Generates a random birthplace as a `city, country`.
-   * @returns A random birthplace.
-   */
-  generateBirthplace(): string {
+  /** Generates a random birthplace as a `city, country`. */
+  private generateBirthplace(): string {
     // TODO: hook this up to a list of potential birthplaces
     const places: string[] = []
 
     return places.random()
   }
 
-  generateEducation(): IEducation | null {
+  /** Generates a random education. */
+  private generateEducation(): IEducation | null {
     const seed = random(1, 100)
 
     if (seed < 25) return null
@@ -46,13 +44,15 @@ export default class Background implements IBackground {
     }
   }
 
-  generateNationality(): string {
+  /** Generates a new nationality. */
+  private generateNationality(): string {
     const nationalities: string[] = []
 
     return nationalities.random()
   }
 
-  generateOccupation(): IOccupation {
+  /** Generates a new occupation. */
+  private generateOccupation(): IOccupation {
     // TODO: hook this up to a list of potential occupations
     const types: string[] = []
     const income = random(1, 100)

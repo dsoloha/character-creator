@@ -18,14 +18,16 @@ export default class Skin implements ISkin {
     this.tattoos = options?.tattoos ?? null
   }
 
-  generateColor(): string {
+  /** Generates a new skin color. */
+  private generateColor(): string {
     const colors = ['white', 'brown', 'black']
     const color = colors.random()
 
     return color
   }
 
-  generateMark(options?: { location?: string; description?: string }): IMark {
+  /** Generates a new marking. */
+  private generateMark(options?: { location?: string; description?: string }): IMark {
     const locations = ['back', 'arm', 'leg', 'butt']
     const descriptions = ['a skull', 'a butterfly']
     const location = options?.location ?? locations.random()
@@ -37,7 +39,8 @@ export default class Skin implements ISkin {
     }
   }
 
-  generateBirthmarks(): IMark[] | null {
+  /** Generates a new birthmark. */
+  private generateBirthmarks(): IMark[] | null {
     const birthmarks = []
 
     while (gaussian(1, 100) > 80) birthmarks.push(this.generateMark({ description: 'a birthmark' }))
@@ -47,7 +50,8 @@ export default class Skin implements ISkin {
     return null
   }
 
-  generateBrands(): IMark[] | null {
+  /** Generates the brands on an actor. */
+  private generateBrands(): IMark[] | null {
     const brands = []
 
     while (gaussian(1, 100) > 80) brands.push(this.generateMark({ description: 'a brand' }))
@@ -57,7 +61,8 @@ export default class Skin implements ISkin {
     return null
   }
 
-  generateMarkings(): IMark[] | null {
+  /** Generates the markings on an actor. */
+  private generateMarkings(): IMark[] | null {
     const markings = []
 
     while (gaussian(1, 100) > 80) markings.push(this.generateMark({ description: 'a marking' }))
@@ -67,7 +72,8 @@ export default class Skin implements ISkin {
     return null
   }
 
-  generateScars(): IMark[] | null {
+  /** Generates the scars on an actor. */
+  private generateScars(): IMark[] | null {
     const scars = []
 
     while (gaussian(1, 100) > 80) scars.push(this.generateMark({ description: 'a scar' }))
@@ -77,7 +83,8 @@ export default class Skin implements ISkin {
     return null
   }
 
-  generateTattoos(): IMark[] | null {
+  /** Generates the tattoos on an actor. */
+  private generateTattoos(): IMark[] | null {
     const tattoos = []
 
     while (gaussian(1, 100) > 80) tattoos.push(this.generateMark())

@@ -7,7 +7,8 @@ export default class Shoulders implements IShoulders {
     this.width = options?.width ?? ''
   }
 
-  generateWidth(): string {
+  /** Generates how wide the shoulders are. */
+  private generateWidth(): string {
     const sizes = ['narrow', 'average', 'broad']
     const size = sizes.random()
 
