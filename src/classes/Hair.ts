@@ -100,7 +100,7 @@ export default class Hair implements IHairs {
     }
   }
 
-  /** Generates the hair on the character's head. */
+  /** Generates the hair on the character's pubic region. */
   private generatePubic(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
