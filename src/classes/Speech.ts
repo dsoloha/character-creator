@@ -7,7 +7,8 @@ export default class Speech implements ISpeech {
     this.style = options?.style ?? ''
   }
 
-  generateStyle(): string {
+  /** Generates the actor's speech style. */
+  private generateStyle(): string {
     const styles = ['posh', 'crass', 'average']
     const style = styles.random()
 

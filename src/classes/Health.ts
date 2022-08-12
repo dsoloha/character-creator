@@ -9,7 +9,8 @@ export default class Health implements IHealth {
     this.injuries = options?.injuries ?? []
   }
 
-  generateIllnesses(): string[] {
+  /** Generates a new illness. */
+  private generateIllnesses(): string[] {
     const illnesses: string[] = []
 
     if (gaussian(1, 100) > 80) illnesses.push('common cold')
@@ -17,10 +18,11 @@ export default class Health implements IHealth {
     return illnesses
   }
 
-  generateInjuries(): string[] {
+  /** Generates a new injury. */
+  private generateInjuries(): string[] {
     const injuries: string[] = []
 
-    if (gaussian(1, 100) > 80) injuries.push('cut')
+    if (gaussian(1, 100) > 80) injuries.push('scratch')
 
     return injuries
   }

@@ -27,25 +27,29 @@ export default class Hair implements IHairs {
     this.leg = options?.leg ?? defaultHair
   }
 
-  generateColor(): string {
+  /** Generates a new hair color. */
+  private generateColor(): string {
     const colors = ['brown', 'blond', 'red']
 
     return colors.random()
   }
 
-  generateLength(): string {
+  /** Generates a new hair length. */
+  private generateLength(): string {
     const lengths = ['short', 'medium', 'long']
 
     return lengths.random()
   }
 
-  generateStyle(): string {
+  /** Generates a new hair style. */
+  private generateStyle(): string {
     const styles = ['neat', 'curly', 'straight']
 
     return styles.random()
   }
 
-  generateHead(options?: { color?: string; length?: string; style?: string }): IHair {
+  /** Generates the hair on the character's head. */
+  private generateHead(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()
@@ -57,7 +61,8 @@ export default class Hair implements IHairs {
     }
   }
 
-  generateFace(options?: { color?: string; length?: string; style?: string }): IHair {
+  /** Generates the character's facial hair. */
+  private generateFace(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()
@@ -69,7 +74,8 @@ export default class Hair implements IHairs {
     }
   }
 
-  generateUnderarms(options?: { color?: string; length?: string; style?: string }): IHair {
+  /** Generates the hair on the character's head. */
+  private generateUnderarms(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()
@@ -81,7 +87,8 @@ export default class Hair implements IHairs {
     }
   }
 
-  generateChest(options?: { color?: string; length?: string; style?: string }): IHair {
+  /** Generates the hair on the character's chest. */
+  private generateChest(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()
@@ -93,7 +100,8 @@ export default class Hair implements IHairs {
     }
   }
 
-  generatePubic(options?: { color?: string; length?: string; style?: string }): IHair {
+  /** Generates the hair on the character's pubic region. */
+  private generatePubic(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()
@@ -105,7 +113,8 @@ export default class Hair implements IHairs {
     }
   }
 
-  generateArm(options?: { color?: string; length?: string; style?: string }): IHair {
+  /** Generates the hair on the character's arms. */
+  private generateArm(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()
@@ -117,7 +126,8 @@ export default class Hair implements IHairs {
     }
   }
 
-  generateLeg(options?: { color?: string; length?: string; style?: string }): IHair {
+  /** Generates the hair on the character's legs. */
+  private generateLeg(options?: { color?: string; length?: string; style?: string }): IHair {
     const color = options?.color ?? this.generateColor()
     const length = options?.length ?? this.generateLength()
     const style = options?.style ?? this.generateStyle()

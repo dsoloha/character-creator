@@ -16,7 +16,8 @@ export default class Mouth implements IMouth {
     this.tongue = options?.tongue ?? true
   }
 
-  generateTeeth(): ITeeth {
+  /** Generates a new set of teeth. */
+  private generateTeeth(): ITeeth {
     const count = gaussian(1, 100) > 95 ? random(1, 32) : 32
     const descriptions = ['straight', 'yellow', 'white']
     const description = descriptions.random()
@@ -27,7 +28,8 @@ export default class Mouth implements IMouth {
     }
   }
 
-  generateTongue(): boolean {
+  /** Generates whether a tongue exists. */
+  private generateTongue(): boolean {
     return gaussian(1, 100) > 99 ? false : true
   }
 

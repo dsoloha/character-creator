@@ -16,11 +16,13 @@ export default class Legs implements ILegs {
     }
   }
 
-  generateFoot(): IFoot | null {
+  /** Generates a new foot. */
+  private generateFoot(): IFoot | null {
     return gaussian(1, 100) > 95 ? null : new Foot().generate()
   }
 
-  generateLeg(): ILeg {
+  /** Generates a new leg. */
+  private generateLeg(): ILeg {
     return {
       foot: this.generateFoot(),
       size: '',

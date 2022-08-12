@@ -7,7 +7,8 @@ export default class Stomach implements IStomach {
     this.shape = options?.shape ?? ''
   }
 
-  generateShape(): string {
+  /** Generates the stomach's shape. */
+  private generateShape(): string {
     const shapes = ['flat', 'round']
     const shape = shapes.random()
 

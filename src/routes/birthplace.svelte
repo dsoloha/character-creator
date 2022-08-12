@@ -7,7 +7,7 @@
 
   {#if $character.background.birthplace}
     <p>
-      {$character.name.first ?? 'Your character'} was born in {$character.background.birthplace}.
+      {$character.name.first ?? 'Your character'} was born in <b>{$character.background.birthplace}</b>.
     </p>
   {/if}
 

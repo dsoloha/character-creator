@@ -7,7 +7,8 @@ export default class Neck implements INeck {
     this.larynx = options?.larynx ?? true
   }
 
-  generateLarynx(): boolean {
+  /** Generates whether a larynx exists. */
+   private generateLarynx(): boolean {
     return gaussian(1, 100) > 99 ? false : true
   }
 

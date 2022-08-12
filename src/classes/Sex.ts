@@ -9,7 +9,8 @@ export default class Sex implements ISex {
     this.type = options?.type ?? 'male'
   }
 
-  generateType(): SexType {
+  /** Generates whether the actor is a biological male or female. */
+   private generateType(): SexType {
     return random(1, 100) > 50 ? 'male' : 'female'
   }
 

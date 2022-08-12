@@ -7,7 +7,8 @@ export default class Foot implements IFoot {
     this.toes = options?.toes ?? 5
   }
 
-  generateToes(): number {
+  /** Generates an amount of toes. */
+  private generateToes(): number {
     return gaussian(1, 100) > 98 ? random(1, 4) : 5
   }
 
